@@ -1,0 +1,74 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+.hero-image {
+    background-image: url("../images/background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.container {
+    margin: 0;
+}
+
+img {
+    height: 100px;
+}
+
+#counter1, #counter2, #counter3, #charCounter {
+    display: none;
+}
+
+h1 {
+    text-align: center;
+    font-weight: bold;
+}
+
+h1, h2 {
+    text-shadow: 2px 2px 4px #000000;
+}
+
+#prompts {
+    margin: 10px 0;
+    line-height: .5;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+#char, #char1, #char2, #char3, #char4, #def1, #def2, #def3, #defender {
+    position: relative;
+    background-color: white;
+    color: black;
+    padding: 30px;
+    border: solid;
+    border-color: green;
+}
+
+#charName, #charName1, #charName2, #charName3, #charName4,
+#defName1, #defName2, #defName3, #defName4, #defenderName {
+    position: absolute;
+    top: 5px;
+    clear: both;
+}
+
+#charHealthPoints, #charHealthPoints1, #charHealthPoints2, #charHealthPoints3,
+#charHealthPoints4, #defHealthPoints1, #defHealthPoints2, #defHealthPoints3,
+#defenderHealthPoints {
+    position: absolute;
+    right: 50%;
+    bottom: -10px;
+    clear: both;
+}
+
+#def1, #def2, #def3 {
+    background-color: red;
+    border: solid;
+    border-color: black;
+}
+
+#defender {
+    background-color: black;
+    color: white;
+}

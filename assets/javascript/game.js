@@ -249,6 +249,7 @@ document.getElementById("defPic1").onclick = function() {
         $("#defender").css('visibility','initial');
         console.log(dCounter);
         $("#def1").css('display','none');
+        $("#prompts").html("");
 
         defenderChoosen = true;
     }
@@ -267,6 +268,7 @@ document.getElementById("defPic2").onclick = function() {
         $("#defender").css('visibility','initial');
         console.log(dCounter);
         $("#def2").css('display','none');
+        $("#prompts").html("");
 
         defenderChoosen = true;
     }
@@ -285,6 +287,7 @@ document.getElementById("defPic3").onclick = function() {
         $("#defender").css('visibility','initial');
         console.log(dCounter);
         $("#def3").css('display','none');
+        $("#prompts").html("");
 
         defenderChoosen = true;
     }

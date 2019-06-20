@@ -372,8 +372,6 @@ $( document ).ready(function() {
     setUp();
 });
 
-/*I really, REALLY tried to make my code more efficient,
-but I could not figure out the .each function and how to 
-incorporate it in my code :( */
+
 
 

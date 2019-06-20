@@ -44,6 +44,8 @@ var gameOver = false;
 var defenderChoosen = false; 
 var mySound = new Audio();
 
+var appendOnce = 0;
+
 function setUp() {
     zero = 0;
     cName = "";
@@ -58,6 +60,8 @@ function setUp() {
     enemies = 0;
     gameOver = false; 
     defenderChoosen = false; 
+
+    appendOnce = 0;
 
     $("#prompts").html("");
     $("#char1").show();
@@ -314,7 +318,11 @@ document.getElementById("Attack").onclick = function() {
         loser();
     }
     else if ((!defenderChoosen) && (gameOver)) {
-        $("#prompts").append("<p>" + " Please press Restart to play again! " + "</p>");
+        if (appendOnce === 0)
+        {
+            $("#prompts").append("<p>" + " Please press Restart to play again! " + "</p>");
+            appendOnce++;
+        }
     }
     else if (!defenderChoosen) {
         $("#prompts").html("<p>" + " No enemy here. " + "</p>");

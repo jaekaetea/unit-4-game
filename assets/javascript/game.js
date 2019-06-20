@@ -59,7 +59,6 @@ function setUp() {
     gameOver = false; 
     defenderChoosen = false; 
 
-
     $("#prompts").html("");
     $("#char1").show();
     $("#char2").show();
@@ -72,91 +71,75 @@ function setUp() {
     $("#defender").css('visibility','hidden');
     $("#Restart").css('visibility','hidden');
 
-    pic = document.getElementById("charPic1");
-    pic.src = char.one.pic;
+    $("#charPic1").attr("src", char.one.pic);
     document.getElementById("charName1").textContent = char.one.name;
     document.getElementById("charHealthPoints1").textContent = char.one.healthPoints;
 
-    pic = document.getElementById("charPic2");
-    pic.src = char.two.pic;
+    $("#charPic2").attr("src", char.two.pic);
     document.getElementById("charName2").textContent = char.two.name;
     document.getElementById("charHealthPoints2").textContent = char.two.healthPoints;
 
-    pic = document.getElementById("charPic3");
-    pic.src = char.three.pic;
+    $("#charPic3").attr("src", char.three.pic);
     document.getElementById("charName3").textContent = char.three.name;
     document.getElementById("charHealthPoints3").textContent = char.three.healthPoints;
 
-    pic = document.getElementById("charPic4");
-    pic.src = char.four.pic;
+    $("#charPic4").attr("src", char.four.pic);
     document.getElementById("charName4").textContent = char.four.name;
     document.getElementById("charHealthPoints4").textContent = char.four.healthPoints;
 }
 
 document.getElementById("charPic1").onclick = function() {
     charChoosen1();
-    mySound.src = "assets/music/playStart.aac";
-    mySound.currentTime = 0;  
-    mySound.play();
+    startMusic();
 };
 
 document.getElementById("charPic2").onclick = function() {
     charChoosen2();
-    mySound.src = "assets/music/playStart.aac";
-    mySound.currentTime = 0;  
-    mySound.play();
+    startMusic();
 };
 
 document.getElementById("charPic3").onclick = function() {
     charChoosen3();
-    mySound.src = "assets/music/playStart.aac";
-    mySound.currentTime = 0;  
-    mySound.play();
+    startMusic();
 };
 
 document.getElementById("charPic4").onclick = function() {
     charChoosen4();
+    startMusic();
+};
+
+function startMusic() {
     mySound.src = "assets/music/playStart.aac";
     mySound.currentTime = 0;  
     mySound.play();
-};
+}
 
 function charChoosen1 () {
     cName = char.one.name;
     cHealth = char.one.healthPoints;
     cPowerInitial = char.one.attackPower;
     cPower = char.one.attackPower;
-    pic = document.getElementById("charPic");
-    pic.src = char.one.pic;
-    document.getElementById("charName").textContent = char.one.name;
-    document.getElementById("charHealthPoints").textContent = char.one.healthPoints;
+    $("#charPic").attr("src", char.one.pic);
+    $("#charName").text(char.one.name);
+    $("#charHealthPoints").text(char.one.healthPoints);
 
-    pic = document.getElementById("defPic1");
-    pic.src = char.two.pic;
+    
+    $("#defPic1").attr("src", char.two.pic);
     document.getElementById("defName1").textContent = char.two.name;
     document.getElementById("defHealthPoints1").textContent = char.two.healthPoints;
     document.getElementById("counter1").textContent = char.two.counterAttack;
 
-    pic = document.getElementById("defPic2");
-    pic.src = char.three.pic;
+    $("#defPic2").attr("src", char.three.pic);
     document.getElementById("defName2").textContent = char.three.name;
     document.getElementById("defHealthPoints2").textContent = char.three.healthPoints;
     document.getElementById("counter2").textContent = char.three.counterAttack;
 
-    pic = document.getElementById("defPic3");
-    pic.src = char.four.pic;
+    $("#defPic3").attr("src", char.four.pic);
     document.getElementById("defName3").textContent = char.four.name;
     document.getElementById("defHealthPoints3").textContent = char.four.healthPoints;
     document.getElementById("counter3").textContent = char.four.counterAttack;
 
-    $("#char1").css('display','none');
-    $("#char2").css('display','none');
-    $("#char3").css('display','none');
-    $("#char4").css('display','none');
-    $("#char").css('visibility','initial');
-    $("#def1").show();
-    $("#def2").show();
-    $("#def3").show();
+    display();
 }
 
 function charChoosen2 () {
@@ -164,38 +147,27 @@ function charChoosen2 () {
     cHealth = char.two.healthPoints;
     cPowerInitial = char.two.attackPower;
     cPower = char.two.attackPower;
-    pic = document.getElementById("charPic");
-    pic.src = char.two.pic;
+    $("#charPic").attr("src", char.two.pic);
     document.getElementById("charName").textContent = char.two.name;
     document.getElementById("charHealthPoints").textContent = char.two.healthPoints;
 
 
-    pic = document.getElementById("defPic1");
-    pic.src = char.one.pic;
+    $("#defPic1").attr("src", char.one.pic);
     document.getElementById("defName1").textContent = char.one.name;
     document.getElementById("defHealthPoints1").textContent = char.one.healthPoints;
     document.getElementById("counter1").textContent = char.one.counterAttack;
 
-    pic = document.getElementById("defPic2");
-    pic.src = char.three.pic;
+    $("#defPic2").attr("src", char.three.pic);
     document.getElementById("defName2").textContent = char.three.name;
     document.getElementById("defHealthPoints2").textContent = char.three.healthPoints;
     document.getElementById("counter2").textContent = char.three.counterAttack;
 
-    pic = document.getElementById("defPic3");
-    pic.src = char.four.pic;
+    $("#defPic3").attr("src", char.four.pic);
     document.getElementById("defName3").textContent = char.four.name;
     document.getElementById("defHealthPoints3").textContent = char.four.healthPoints;
     document.getElementById("counter3").textContent = char.four.counterAttack;
 
-    $("#char1").css('display','none');
-    $("#char2").css('display','none');
-    $("#char3").css('display','none');
-    $("#char4").css('display','none');
-    $("#char").css('visibility','initial');
-    $("#def1").show();
-    $("#def2").show();
-    $("#def3").show();
+    display();
 }
 
 function charChoosen3 () {
@@ -203,38 +175,27 @@ function charChoosen3 () {
     cHealth = char.three.healthPoints;
     cPowerInitial = char.three.attackPower;
     cPower = char.three.attackPower;
-    pic = document.getElementById("charPic");
-    pic.src = char.three.pic;
+    $("#charPic").attr("src", char.three.pic);
     document.getElementById("charName").textContent = char.three.name;
     document.getElementById("charHealthPoints").textContent = char.three.healthPoints;
 
     
-    pic = document.getElementById("defPic1");
-    pic.src = char.one.pic;
+    $("#defPic1").attr("src", char.one.pic);
     document.getElementById("defName1").textContent = char.one.name;
     document.getElementById("defHealthPoints1").textContent = char.one.healthPoints;
     document.getElementById("counter1").textContent = char.one.counterAttack;
 
-    pic = document.getElementById("defPic2");
-    pic.src = char.two.pic;
+    $("#defPic2").attr("src", char.two.pic);
     document.getElementById("defName2").textContent = char.two.name;
     document.getElementById("defHealthPoints2").textContent = char.two.healthPoints;
     document.getElementById("counter2").textContent = char.two.counterAttack;
 
-    pic = document.getElementById("defPic3");
-    pic.src = char.four.pic;
+    $("#defPic3").attr("src", char.four.pic);
     document.getElementById("defName3").textContent = char.four.name;
     document.getElementById("defHealthPoints3").textContent = char.four.healthPoints;
     document.getElementById("counter3").textContent = char.four.counterAttack;
 
-    $("#char1").css('display','none');
-    $("#char2").css('display','none');
-    $("#char3").css('display','none');
-    $("#char4").css('display','none');
-    $("#char").css('visibility','initial');
-    $("#def1").show();
-    $("#def2").show();
-    $("#def3").show();
+    display();
 }
 
 function charChoosen4 () {
@@ -242,29 +203,29 @@ function charChoosen4 () {
     cHealth = char.four.healthPoints;
     cPowerInitial = char.four.attackPower;
     cPower = char.four.attackPower;
-    pic = document.getElementById("charPic");
-    pic.src = char.four.pic;
+    $("#charPic").attr("src", char.four.pic);
     document.getElementById("charName").textContent = char.four.name;
     document.getElementById("charHealthPoints").textContent = char.four.healthPoints;
  
-    pic = document.getElementById("defPic1");
-    pic.src = char.one.pic;
+    $("#defPic1").attr("src", char.one.pic);
     document.getElementById("defName1").textContent = char.one.name;
     document.getElementById("defHealthPoints1").textContent = char.one.healthPoints;
     document.getElementById("counter1").textContent = char.one.counterAttack;
 
-    pic = document.getElementById("defPic2");
-    pic.src = char.two.pic;
+    $("#defPic2").attr("src", char.two.pic);
     document.getElementById("defName2").textContent = char.two.name;
     document.getElementById("defHealthPoints2").textContent = char.two.healthPoints;
     document.getElementById("counter2").textContent = char.two.counterAttack;
 
-    pic = document.getElementById("defPic3");
-    pic.src = char.three.pic;
+    $("#defPic3").attr("src", char.three.pic);
     document.getElementById("defName3").textContent = char.three.name;
     document.getElementById("defHealthPoints3").textContent = char.three.healthPoints;
     document.getElementById("counter3").textContent = char.three.counterAttack;
 
+    display();
+}
+
+function display() {
     $("#char1").css('display','none');
     $("#char2").css('display','none');
     $("#char3").css('display','none');
@@ -341,8 +302,8 @@ document.getElementById("Attack").onclick = function() {
         cPower = cPowerInitial * exp;
         dHealth = dHealth - cPower;
         console.log(cPower + " " + dHealth);
-        $('#prompts').html("<p>" + "You attacked " + dName + " for " + cPower + " damage. "+ "</p>" + 
-                "<p>" + dName + " attacked you back for " + dCounter + " damage." + "</p>");
+        $('#prompts').html("<span>" + " You attacked " + dName + " for " + cPower + " damage. "+ "</span>" + 
+             "<br>" + "<span>" + dName + " attacked you back for " + dCounter + " damage. " + "</span>");
         document.getElementById("charHealthPoints").textContent = cHealth;
         document.getElementById("defenderHealthPoints").textContent = dHealth;
         
@@ -350,10 +311,10 @@ document.getElementById("Attack").onclick = function() {
         loser();
     }
     else if ((!defenderChoosen) && (gameOver)) {
-        $("#prompts").html("<p>" + "Please press Restart to play again!" + "</p>");
+        $("#prompts").append("<p>" + " Please press Restart to play again! " + "</p>");
     }
     else if (!defenderChoosen) {
-        $("#prompts").html("<p>" + "No enemy here." + "</p>");
+        $("#prompts").html("<p>" + " No enemy here. " + "</p>");
     }
 };
 
@@ -361,7 +322,7 @@ function next() {
     if (dHealth <= 0)
     {   
         $("#prompts").html("");
-        $("#prompts").html("<p>" + "You have defeated " + dName + ". You can choose to fight another enemy." + "</p>");
+        $("#prompts").html("<p>" + " You have defeated " + dName + ". You can choose to fight another enemy. " + "</p>");
         $("#defender").css('visibility','hidden');
         defenderChoosen = false; 
         enemies++;
@@ -379,7 +340,7 @@ function loser() {
 
         //Because no one has negative health
         document.getElementById("charHealthPoints").textContent = zero;
-        $("#prompts").html("<p>" + "You have been defeated.  GAME OVER!!!" + "</p>");
+        $("#prompts").html("<p>" + " You have been defeated.  GAME OVER!!! " + "</p>");
         defenderChoosen = false;
         gameOver = true;
 
@@ -392,29 +353,24 @@ function winner() {
     mySound.currentTime = 0;  
     mySound.play();
 
-    $("#prompts").html("<p>" + "You Won!!!  GAME OVER!!!" + "</p>");
+    $("#prompts").html("<p>" + " You Won!!!  GAME OVER!!! " + "</p>");
     defenderChoosen = false;
     gameOver = true;
 
     $("#Restart").css('visibility','initial');
 }
 
-//function restartButton() {
-//}
 
 document.getElementById("Restart").onclick = function() {
     setUp();
 };
 
-//$("#Restart").html("");
+$( document ).ready(function() {
+    setUp();
+});
 
-setUp();
+/*I really, REALLY tried to make my code more efficient,
+but I could not figure out the .each function and how to 
+incorporate it in my code :( */
 
-//needs a "defender area"
-
-
-//ewan luke knife redface
-//120 100 150 180   health
-//8 10 9 5 guessed most of these  attack
-//0 5 20 25   counter
 

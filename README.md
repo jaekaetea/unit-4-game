@@ -2,6 +2,35 @@
 
 Play "Star Wars RPG!" here: https://jaekaetea.github.io/unit-4-game/
 
+
+In this app, users choose their puuurfect character to attack other characters in this Star Wars free for all.
+
+After the user chooses their character, the other possible choices become the enemy.
+
+The user then chooses which enemy to attack first.
+
+Through each attack, the user takes and deals out damage, while gaining attack strength through experience.
+
+![attacking](/Images/attackingShown.gif)
+
+For every "Attack!" made, the damage received and given are shown.
+
+![attack](/Images/attackShown.png)
+
+Through these challenges, our puurfect hero is either victorious or defeated!
+
+
+### Techologies Used
+HTML, CSS, Bootstrap, JavaScript, and jQuery. 
+
+
+### Enjoy!
+
+
+---
+
+## Class Instructions
+
 ### Overview
 
 In this assignment, you'll create another fun and interactive game for web browsers. This time, your app must dynamically update your HTML pages with the jQuery library.
